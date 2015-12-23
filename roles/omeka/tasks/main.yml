@@ -1,0 +1,38 @@
+---
+  - name: download omeka
+    get_url: >
+      url=http://omeka.org/files/{{ omeka.pkg }}.zip
+      dest=/home/vagrant/{{ omeka.pkg }}.zip
+    sudo: yes
+
+  - name: unzip omeka
+    unarchive: >
+      src=/home/vagrant/{{ omeka.pkg }}.zip
+      dest=/var/www/
+      copy=no
+    sudo: yes
+
+  - name: remove default www
+    file: path=/var/www/html state=absent
+    sudo: yes
+
+  - name: set file permissions
+    file: path=/var/www/{{ omeka.pkg }}/files recurse=yes mode=0777
+    sudo: yes
+
+  - name: update db.ini file
+    template: src=db.ini.j2 dest=/var/www/{{ omeka.pkg }}/db.ini
+    sudo: yes
+
+  - name: download csv plugin
+    get_url: >
+      url=http://omeka.org/wordpress/wp-content/uploads/CSV-Import-2.0.3.zip
+      dest=/home/vagrant/CSV-Import-2.0.3.zip
+    sudo: yes
+
+  - name: unzip csv plugin
+    unarchive: >
+      src=/home/vagrant/CSV-Import-2.0.3.zip
+      dest=/var/www/{{ omeka.pkg }}/plugins
+      copy=no
+    sudo: yes
