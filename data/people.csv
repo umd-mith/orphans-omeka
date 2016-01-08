@@ -1,4 +1,4 @@
-ID,Display Name,First Name,Last Name,Title,Affiliation,Department/School,Email Address,Website URL
+Identifier,Display Name,First Name,Last Name,Title,Affiliation,Department/School,Email Address,Website URL
 0037,Alan Berliner,Alan,Berliner,,,,,http://www.alanberliner.com/
 0039,Alfred Leslie,Alfred ,Leslie,,,,,
 0060,Andrea McCarty,Andrea,McCarty,,,,,
@@ -80,10 +80,3 @@ ID,Display Name,First Name,Last Name,Title,Affiliation,Department/School,Email A
 0081,William O’Farrell,William,O'Farrell,,Library and Archives Canada,,,
 0014,William T. Murphy,William,Murphy,,,,,
 0026,Yuri Tsivian,Yuri,Tsivian,,,,,
-0082,,,,,,,,
-0083,,,,,,,,
-0084,,,,,,,,
-0085,,,,,,,,
-0086,,,,,,,,
-0087,,,,,,,,
-0088,,,,,,,,
