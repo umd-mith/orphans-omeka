@@ -1,0 +1,15 @@
+---
+  - name: import omeka db from backup
+    hosts: local
+    user: vagrant
+    tasks:
+
+      - stat: path=/vagrant/data/omeka.sql
+        register: dumpfile
+
+      - fail: msg="No dump file available. Please run the dump.yml playbook"
+        when: dumpfile.stat.exists == false
+
+      - name: import omeka db to omeka database
+        mysql_db: state=import name={{ db.name }} target=/vagrant/data/omeka.sql
+        sudo: yes

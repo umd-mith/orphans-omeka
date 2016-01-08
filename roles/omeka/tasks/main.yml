@@ -36,3 +36,16 @@
       dest=/var/www/{{ omeka.pkg }}/plugins
       copy=no
     sudo: yes
+
+  - name: download pbcore plugin
+    get_url: >
+      url=http://omeka.org/wordpress/wp-content/uploads/PBCore-Element-Set-2.1.zip
+      dest=/home/vagrant/PBCore-Element-Set-2.1.zip
+    sudo: yes
+
+  - name: unzip pbcore plugin
+    unarchive: >
+      src=/home/vagrant/PBCore-Element-Set-2.1.zip
+      dest=/var/www/{{ omeka.pkg }}/plugins
+      copy=no
+    sudo: yes

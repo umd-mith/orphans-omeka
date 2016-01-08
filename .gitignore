@@ -1,0 +1,6 @@
+.agignore
+.vagrant
+**/secret.yml
+*.cert
+*.crt
+*.key
